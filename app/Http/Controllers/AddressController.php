@@ -11,6 +11,7 @@ class AddressController extends Controller
     }
     public function show(string $cep)
     {
-        $this->getAddressByCepUseCase->execute($cep);
+        $address = $this->getAddressByCepUseCase->execute($cep);
+        return response()->json($address);
     }
 }
