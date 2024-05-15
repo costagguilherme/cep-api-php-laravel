@@ -16,6 +16,6 @@ class AddressController extends Controller
     {
         Validator::validate(['cep' => $cep], ['cep' => 'required|regex:/^[0-9]{8}$/']);
         $address = $this->getAddressByCepUseCase->execute($cep);
-        return $this->sendSuccess($address);
+        return $this->sendSuccess($address, 'CEP returned successfully');
     }
 }

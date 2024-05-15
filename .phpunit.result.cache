@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Feature\\GetAddressByCepTest::test_returns_success":7},"times":{"Tests\\Feature\\GetAddressByCepTest::test_returns_success":0.155,"Tests\\Feature\\GetAddressByCepTest::test_this_should_return_address":0.553}}
