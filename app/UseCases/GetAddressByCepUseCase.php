@@ -19,6 +19,10 @@ class GetAddressByCepUseCase
     }
     public function execute(string $cep)
     {
+        $address = $this->addressRepository->getByCep($cep);
+        if ($address) {
+            return $address;
+        }
         $cepProvider = env('CEP_PROVIDER', self::DEFAULT_PROVIDER);
         $cepStrategy = $this->getCepStrategyFactory->factory($cepProvider);
         $address = $cepStrategy->fetch($cep);

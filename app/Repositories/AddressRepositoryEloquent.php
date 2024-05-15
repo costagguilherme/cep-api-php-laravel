@@ -14,5 +14,9 @@ class AddressRepositoryEloquent implements IAddressRepository
         return $address->toArray();
     }
 
-
+    public function getByCep(string $cep): array
+    {
+        $address = Address::where('cep', $cep)->first();
+        return $address?->toArray() ?? [];
+    }
 }
