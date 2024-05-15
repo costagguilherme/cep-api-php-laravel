@@ -1,4 +1,5 @@
 # API CONSULTA CEP
+##### PULL REQUEST: [Funcionalidade de consulta de CEP by costagguilherme · Pull Request #1 · costagguilherme/cep-api-php-laravel (github.com)](https://github.com/costagguilherme/cep-api-php-laravel/pull/1) 
 
 ### 1. TECNOLOGIAS
 * PHP 8.3.3 (Laravel 10)
