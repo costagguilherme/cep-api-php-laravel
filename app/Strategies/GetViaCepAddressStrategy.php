@@ -4,6 +4,7 @@ namespace App\Strategies;
 
 use App\Interfaces\ICepStrategy;
 use GuzzleHttp\Client;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class GetViaCepAddressStrategy implements ICepStrategy
 {
@@ -20,6 +21,9 @@ class GetViaCepAddressStrategy implements ICepStrategy
     {
         $address = $this->httpClient->get("/ws/{$cep}/json/");
         $addressResponse = json_decode($address->getBody()->getContents(), true);
+        if (isset($addressResponse['erro'])) {
+            return [];
+        }
         return $this->convertResponse($addressResponse);
     }
 
