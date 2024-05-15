@@ -13,7 +13,7 @@ class GetCepStrategyFactory
         $strategies = config('cep_strategies');
         $strategy = $strategies[$cepProvider] ?? null;
         if (!$strategy) {
-            throw new \Exception('CEP Provider does not exists');
+            throw new \App\Exceptions\NotFoundCustomException('CEP Provider does not exists');
         }
 
         return app($strategy);
